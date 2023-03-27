@@ -5,22 +5,22 @@ Projeto web em desenvolvimento.
 Work Station Store tem é uma loja online que tem como objetivo a compra e venda de ferramentas de trabalho entre usuários. Com o projeto busca-se criar uma forma simples de comercio entre duas pessoas, onde o comprador pode ser vendedor e vice-versa, o sistema tem como principal tecnologia o uso da linguagem de programação PHP, e utiliza suas ferramentas para criar desde a interface, como o acesso ao banco de dados. O Projeto é dedicado as materias de Desenvolvimento Para Web 3 e Análise e Projetos Orientados a Objetos e tem como professores orientadres Guilherme da Costa Silva e Denis Lucas Silva.
 
 # Funcionalidades:
-001. Cadastro de Usuário;
+01. Cadastro de Usuário;
     (Nome, sobrenome, emaiil e senha)
 
-002. Cadastro de Itens;
+02. Cadastro de Itens;
     (Tipo, descrição, preço, imagens)
 
-003. Perfil de Usuário;
+03. Perfil de Usuário;
     (Nome de usuário, status, foto)
 
-004. Compra de itens;
+04. Compra de itens;
     (Quantidade, ultimas compras, estatistica geral)
 
-005. Venda de itens;
+05. Venda de itens;
     (Quantidade, ultimas vendas, estatistica geral)
 
-006. Filtro de ofertas;
+06. Filtro de ofertas;
     (Tipo, nome, quantidade, preço)
 
 # Figma
