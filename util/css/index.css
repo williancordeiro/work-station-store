@@ -1,0 +1,20 @@
+#init {
+    /* background-image: url(/util/imgs/wallpaper/wallpaper.png); */
+    background-repeat: no-repeat;
+    background-size:100rem;
+    overflow: auto;
+    position: absolute;
+    text-align: center;
+}
+
+nav {
+    background-color: #ffffff;
+}
+
+#pages {
+    background-color: #ffffff;
+}
+
+/* .nav-pills {
+    color
+}
