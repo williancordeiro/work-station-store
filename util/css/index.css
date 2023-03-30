@@ -15,6 +15,7 @@ nav {
     background-color: #ffffff;
 }
 
-/* .nav-pills {
-    color
+#btn-offers {
+    position:absolute;
+    transform:translate3d(0, -12rem, 0);
 }
