@@ -36,8 +36,8 @@
                 </div>
                 
             </nav>
-            <hr class="container">
-            <div class="container-fluid border-bottom border-warning" id="pages">
+            <hr id="div-nav" class="container">
+            <div id="nav2" class="container-fluid border-bottom border-warning" id="pages">
                 <div class="container p-md-1">
                     <ul class="nav nav-pills nav-fill justify-content-center link-dark">
                         <li class="nav-item">
@@ -89,9 +89,87 @@
                 </div>
 
                 <div class="tab-content">
-                    <div class="tab-pane show active" id="store">
-                        <section class="container justify-content-between">
+                    <div class="tab-pane show" id="store">
+                        <section id="coluns" class="row ms-5 me-5 mt-3">
 
+                            <div id="col1" class="col-3 border border-warning">
+                                <h1>Filtro:</h1>
+                                <h4>Preço:</h4>
+                                <form class="input-group">
+                                    <label class="form-control">Min</label>
+                                    <input class="form-control" type="number" min="0" max="100" name="" id="">
+                                    <p class="me-1 ms-1">-</p>
+                                    <label class="form-control">Max</label>
+                                    <input class="form-control" type="number" min="0" max="100" name="" id="">
+                                </form>
+
+                                <hr>
+                                <h4>Tipo:</h4>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+
+                                <hr>
+                                <h4>Categoria:</h4>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+
+                                <hr>
+                                <h4>Uso:</h4>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                                <div class="col">
+                                    <input class="ms-3" type="checkbox">
+                                    <label class="mb-3" for=>. . .</label>
+                                </div>
+                            </div>
+
+                            <div id="col2" class="col-9 border border-warning">
+                                <form class="input-group form-text">
+                                    <input id="search" class="border-0" type="text" placeholder="Procurar...">
+                                    <button id="bt-search" class="btn border-start" type="submit">
+                                        <img src="/util/imgs/icons/search.svg" alt="">
+                                    </button>
+                                </form>
+                                <hr>
+                            </div>
                         </section>
                     </div>
                 </div>

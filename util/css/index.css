@@ -7,8 +7,16 @@
     text-align: center;
 }
 
+body {
+    background-color: #fafafa;
+}
+
 nav {
-    background-color: #ffffff;
+    background-color: #fafafa;
+}
+
+#nav2 {
+    background-color: #fafafa;
 }
 
 #pages {
@@ -18,4 +26,29 @@ nav {
 #btn-offers {
     position:absolute;
     transform:translate3d(0, -12rem, 0);
+}
+
+#search {
+    font-size: 2rem;
+    padding-right: 55rem;
+}
+
+#search:focus {
+    outline: 0;
+}
+
+#bt-search:hover {
+    border: 0;
+}
+
+#store {
+    background-color: #f5f5f5;
+}
+
+#col1 {
+    background-color: #ffffff;
+}
+
+#col2 {
+    background-color: #ffffff;
 }
