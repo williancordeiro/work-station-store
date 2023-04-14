@@ -23,6 +23,12 @@ nav {
     background-color: #ffffff;
 }
 
+/* .nav-pills .nav-link.active {
+    background-color: green;
+    color: white;
+} */
+  
+
 #btn-offers {
     position:absolute;
     transform:translate3d(0, -12rem, 0);
@@ -52,3 +58,4 @@ nav {
 #col2 {
     background-color: #ffffff;
 }
+  
