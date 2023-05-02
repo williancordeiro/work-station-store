@@ -1,0 +1,1 @@
+import { Formulario } from '../../public/js/index.js';
