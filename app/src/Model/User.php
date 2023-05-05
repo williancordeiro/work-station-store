@@ -48,11 +48,11 @@ class User extends Model {
 
     protected function verifyErrors() {
         if (strlen($this->first_name) < 3) {
-            $this->setErrorMensagem('Nome', 'Deve conter no mínimo 3 caracteres.');
+            $this->setErrorMensagem('nome', 'Deve conter no mínimo 3 caracteres.');
         }
 
         if (strlen($this->last_name) < 3) {
-            $this->setErrorMensagem('Sobrenome', 'Deve conter no mínimo 3 caracteres.');
+            $this->setErrorMensagem('sobrenome', 'Deve conter no mínimo 3 caracteres.');
         }
 
         if (strlen($this->email) < 3) {
@@ -60,7 +60,7 @@ class User extends Model {
         }
 
         if (strlen($this->passwordPlane) < 3) {
-            $this->setErrorMensagem('Senha', 'Deve conter no mínimo 3 caracteres.');
+            $this->setErrorMensagem('senha', 'Deve conter no mínimo 3 caracteres.');
         }
     }
 

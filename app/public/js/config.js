@@ -8,12 +8,12 @@ let loginForm = $(
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="text-center" action="store.html">
-                <div class="form-floating m-3">
-                  <input type="email" class="form-control form-custom" id="email" placeholder="nome@exemplo.com">
+            <form class="text-center" action="<?= URL_RAIZ ?>" method="post">
+                <div class="form-floating m-3 <?= $this->getErroCss('email') ?>">
+                  <input type="email" class="form-control form-custom" id="email" autofocus placeholder="nome@exemplo.com">
                   <label for="email">Email:</label>
                 </div>
-                <div class="form-floating m-3">
+                <div class="form-floating m-3 <?= $this->getErroCss('senha') ?>">
                   <input type="password" class="form-control form-custom" id="password" placeholder="nome@exemplo.com">
                   <label for="password">Senha:</label>
                 </div>
@@ -40,13 +40,13 @@ let loginForm = $(
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="text-center" action="store.html">
+            <form class="text-center" method="post">
                 <div class="form-floating m-3">
-                  <input type="text" class="form-control form-custom" id="name" placeholder="Nome">
+                  <input type="text" class="form-control form-custom" id="first_name" autofocus placeholder="Nome">
                   <label for="name">Nome:</label>
                 </div>
                 <div class="form-floating m-3">
-                  <input type="text" class="form-control form-custom" id="lastName" placeholder="Sobrenome">
+                  <input type="text" class="form-control form-custom" id="last_name" placeholder="Sobrenome">
                   <label for="lastName">Sobrenome:</label>
                 </div>
                 <div class="form-floating m-3">
@@ -91,6 +91,6 @@ let loginForm = $(
     
       setTimeout(() => {
         loginForm.modal('show');
-      }, 300);
+      }, 500);
     });
   });
