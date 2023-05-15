@@ -41,7 +41,7 @@
                     <li><a class="dropdown-item" href="#">Carrinho</a></li>
                     <li><a class="dropdown-item" href="#">Configurações</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" id="exit" href="index.html">Sair</a></li>
+                    <li><a class="dropdown-item" id="exit" href="<?= URL_RAIZ ?>">Sair</a></li>
                 </ul>
             </li>
         </ul>
@@ -65,15 +65,15 @@
         <div class="tab-content">
             <div class="tab-pane show active bg-custom" id="store">
                 <section class="row ms-5 me-5 mt-5">
-                <div class="col-3 custom-col border bg-white">
+                    <div class="col-3 custom-col border bg-white">
 
-                </div>
-                <div class="col custom-col border bg-white">
-                    <div class="input-group input-group-lg mt-1 mb-2 p-1 pe-3 ps-3 border-bottom">
-                    <input type="search" class="form-control border-0 border-bottom custom-input" placeholder="Procurar...">
-                    <button class="btn border-start border-bottom btn-custom"><i class="bi-search"></i></button>
                     </div>
-                </div>
+                    <div class="col custom-col border bg-white">
+                        <div class="input-group input-group-lg mt-1 mb-2 p-1 pe-3 ps-3 border-bottom">
+                        <input type="search" class="form-control border-0 border-bottom custom-input" placeholder="Procurar...">
+                        <button class="btn border-start border-bottom btn-custom"><i class="bi-search"></i></button>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>

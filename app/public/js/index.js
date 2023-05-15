@@ -8,7 +8,7 @@ let loginForm = $(
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="text-center" action="<?= URL_RAIZ ?>" method="post">
+            <form class="text-center" action="${URL_RAIZ}" method="post">
                 <div class="form-floating m-3 <?= $this->getErroCss('email') ?>">
                   <input type="email" class="form-control form-custom" id="email" autofocus placeholder="nome@exemplo.com">
                   <label for="email">Email:</label>
@@ -40,7 +40,7 @@ let loginForm = $(
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="text-center" method="post">
+            <form class="text-center" action="${URL_RAIZ}" method="post">
                 <div class="form-floating m-3">
                   <input type="text" class="form-control form-custom" id="first_name" autofocus placeholder="Nome">
                   <label for="name">Nome:</label>

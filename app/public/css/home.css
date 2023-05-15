@@ -1,0 +1,18 @@
+.dropdown-item#exit:hover {
+    background-color: red;
+    color: #ffffff;
+}
+
+.home-bg {
+    padding-top: 7.5rem;
+    background-color: rgba(192, 192, 192, 0.753);
+    backdrop-filter: blur(10px);
+}
+
+.home-col {
+    padding-bottom: 100%;
+}
+
+.home-btn {
+    top: 75%;
+}

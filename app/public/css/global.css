@@ -1,0 +1,63 @@
+@import url('https://fonts.cdnfonts.com/css/helvetica-2');
+
+body {
+    margin: auto;
+    font-family: Helvetica, sans-serif;
+}
+
+.form-control {
+    border: solid 2px #d3d3d3;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #FFCD4D;
+}
+
+.global-border {
+    border-bottom: solid 3px #FFCD4D;
+}
+
+.global-navbar {
+    background-color: rgb(238, 238, 238);
+}
+
+.global-pills {
+    background-color: rgb(238, 238, 238);
+}
+
+.global-footer {
+    background-color: #FFCD4D;
+}
+
+.global-btn {
+    padding: 0.5rem 3rem;
+    font-size: 1.5rem;
+    background-color: #FFCD4D;
+    color: #ffffff;
+}
+
+.global-btn:hover, .global-btn:active {
+    background-color: #ffd469;
+    color: #ffffff;
+}
+
+.global-btn#login {
+    top: 75%;
+}
+
+.global-link {
+    color: #000000;
+}
+
+.global-link:hover, .global-link:active, .nav-pills .global-link.active, .dropdown-toggle.show {
+    border-radius: 2px;
+    background-color: rgba(237, 171, 0, 0.22);
+    color: #ffffff;
+}
+
+.dropdown-item:hover {
+    background-color: #FFCD4D;
+    color: #ffffff;
+}
+

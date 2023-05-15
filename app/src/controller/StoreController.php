@@ -3,7 +3,7 @@ namespace controller;
 
 use \Framework\DW3Controlador;
 
-class Store extends DW3Controlador
+class StoreController extends DW3Controlador
 {
     public function index()
     {
