@@ -17,7 +17,7 @@
                     <img class="img-fluid" src="<?= URL_IMG . 'background.png' ?>" alt="">
                 </div>
                 <div class="text-center">
-                    <button id="login" class="btn global-btn position-absolute translate-middle">Ofertas</button>
+                    <a id="login" class="btn global-btn position-absolute translate-middle" href="<?= URL_RAIZ . 'login' ?>">Ofertas</a>
                 </div>
             </div>
         </div>

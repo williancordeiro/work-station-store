@@ -8,36 +8,23 @@
                     <img class="img-fluid" src="<?= URL_IMG . 'logo.png' ?>" alt="">
                 </div>
 
-                <div class="form-floating my-3">
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome..." required>
+                <div class="form-floating mt-4">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome..." required autofocus>
                     <label for="name">Nome:</label>
                 </div>
-                <div class="form-floating my-3">
-                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Sobrenome..." required>
-                    <label for="lastName">Sobrenome:</label>
-                </div>
 
-                <div class="form-floating my-3">
-                    <input type="text" class="form-control" name="user" id="user" placeholder="Usuário..." required>
-                    <label for="user">Usuário:</label>
-                </div>
-
-                <div class="form-floating my-3">
+                <div class="form-floating mt-4">
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email..." required>
                     <label for="email">Email:</label>
                 </div>
 
-                <div class="form-floating my-3">
+                <div class="form-floating mt-4">
                     <input class="form-control" type="password" name="password" id="password" placeholder="Senha..." required>
                     <label for="password">Senha:</label>
                 </div>
-                <div class="form-floating my-3">
-                    <input class="form-control" type="password" name="passwordC" id="passwordC" placeholder="Confirmar Senha..." required>
-                    <label for="passwordC">Confirmar Senha:</label>
-                </div>
 
-                <div class="text-center">
-                    <button class="btn btn-lg register-btn ps-5 pe-5">Cadastre-se</button>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-lg global-btn ps-5 pe-5">Cadastre-se</button>
                 </div>
 
                 <div class="my-3">

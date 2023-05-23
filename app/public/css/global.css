@@ -1,7 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-2');
 
 body {
-    margin: auto;
     font-family: Helvetica, sans-serif;
 }
 
@@ -12,6 +11,16 @@ body {
 .form-control:focus {
     box-shadow: none;
     border-color: #FFCD4D;
+}
+
+.form-control-sm {
+    border: 0;
+    border-radius: 0;
+    border-bottom: solid 1px #d3d3d3;
+}
+
+.form-control-sm:focus {
+    border-color: #DAA520;
 }
 
 .global-border {
@@ -34,12 +43,13 @@ body {
     padding: 0.5rem 3rem;
     font-size: 1.5rem;
     background-color: #FFCD4D;
-    color: #ffffff;
+    color: #292929;
 }
 
 .global-btn:hover, .global-btn:active {
-    background-color: #ffd469;
-    color: #ffffff;
+    background-color: #daa520;
+    font-weight: bold;
+    color: #000000;
 }
 
 .global-btn#login {
@@ -47,17 +57,34 @@ body {
 }
 
 .global-link {
-    color: #000000;
+    color: #292929;
 }
 
 .global-link:hover, .global-link:active, .nav-pills .global-link.active, .dropdown-toggle.show {
     border-radius: 2px;
     background-color: rgba(237, 171, 0, 0.22);
-    color: #ffffff;
+    font-weight: bold;
+    color: #000000;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
 
 .dropdown-item:hover {
     background-color: #FFCD4D;
-    color: #ffffff;
+    color: #000000;
 }
 
+.home-file {
+    margin: 0;
+    cursor: pointer;
+    font-size: 64px;
+    font-style: oblique;
+    color: gray;
+    transition: 0.5s;
+}
+
+.home-file:hover {
+    color: black;
+}

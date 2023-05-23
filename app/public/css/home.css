@@ -16,3 +16,8 @@
 .home-btn {
     top: 75%;
 }
+
+.dropdown-item#name {
+    background-color: #ffffff;
+    color: #000000;
+}

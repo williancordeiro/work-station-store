@@ -1,7 +1,7 @@
 <div class="container-fluid login-bg m-auto">
     <div class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-5 mt-5 mb-5">
-            <form class="login" action="login.html" method="post">
+            <form class="login" action="<?= URL_RAIZ . 'login' ?>" method="post">
                 <h1 class="text-center">Entrar</h1>
 
                 <div class="text-center mt-3 mb-5">
@@ -19,11 +19,11 @@
                 </div>
                 
                 <div class="text-center">
-                    <button class="btn btn-lg pe-5 ps-5 login-btn">Entrar</button>
+                    <button class="btn btn-lg pe-5 ps-5 global-btn">Entrar</button>
                 </div>
 
                 <div class="my-3">
-                    <p>Ainda não possuí cadastro? <a class="link-warning" href="<?= URL_RAIZ . 'register' ?>">Registrar-se</a></p>
+                    <p>Ainda não possuí cadastro? <a class="link-warning" href="<?= URL_RAIZ . 'register/create' ?>">Registrar-se</a></p>
                 </div>
             </form>
         </section>

@@ -2,15 +2,23 @@
 
 $rotas = [
     '/' => [
-        'GET' => '\controller\Principal#index',
-    ],
-    '/login' => [
-        'GET' => '\controller\LoginController#index',
-    ],
-    '/register' => [
-        'GET' => '\controller\RegisterController#index',
+        'GET' => '\Controller\Principal#index',
     ],
     '/store' => [
-        'GET' => '\controller\Store#index',
+        'GET' => '\Controller\StoreController#index',
+    ],
+    '/store/sale/new' => [
+        'GET' => '\Controller\StoreController#new',
+    ],
+    '/login' => [
+        'GET' => '\Controller\LoginController#index',
+        'POST' => '\Controller\LoginController#bin',
+        'DELETE' => '\Controller\LoginController#delete',
+    ],
+    '/register' => [
+        'POST' => '\Controller\RegisterController#bin',
+    ],
+    '/register/create' => [
+        'GET' => '\Controller\RegisterController#index'
     ],
 ];
