@@ -1,103 +1,91 @@
-<?php include PASTA_VISAO . '/sale/new.php' ?>
-
-<header class="">
-    <nav class="navbar global-navbar border-bottom p-3">
-        <div class="container justify-content-center">
-            <a class="navbar-brand" href="#">
-                <div class="d-flex">
-                    <img src="<?= URL_IMG . 'logo.png' ?>" class="img-fluid align-items-center" alt="Work Station Store">                          
-                </div>
-            </a>
+<header id="navbar-site" class="container-fluid bg-light shadow-sm p-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-2">
+        <div class="container"> 
+        <a class="navbar-brand mx-auto" href="#">
+            <img class="img-fluid" src="<?= URL_IMG . 'logo.png' ?>" alt="">
+        </a>
         </div>
     </nav>
-    <div id="ws-pagination" class="global-pills pt-2 pb-2">
-        <ul class="nav nav-pills nav-fill container justify-content-center">
+    <div id="menuPag">
+        <ul class="nav nav-pills nav-fill container p-1" id="menuWs">
             <li class="nav-item">
-                <a class="nav-link global-link" data-bs-toggle="tab" aria-current="page" href="#init">Inicio</a>
+            <a class="nav-link rounded-0" data-bs-toggle="tab" aria-current="page" href="#init">Inicio</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link global-link dropdown-toggle" data-bs-toggle="dropdown" href="#purchase" role="button" aria-expanded="false">Compras <i class="bi bi-caret-down-square"></i></a>
+            <li class="nav-item dropdown dropdown-center">
+            <a class="nav-link rounded-0 dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="#purchase">Compras</a>
+            <ul class="dropdown-menu text-center">
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myCart" href="#">Carrinho</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#">Histórioco</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-0 active" data-bs-toggle="tab" aria-current="page" href="#store">Loja</a>
+            </li>
+            <li class="nav-item dropdown dropdown-center">
+                <a class="nav-link rounded-0 dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="#sell">Vendas</a>
                 <ul class="dropdown-menu text-center">
-                    <li><a class="dropdown-item" href="#">Carinho</a></li>
-                    <li><a class="dropdown-item" href="#">Todas as compras</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#">Nova</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#">Histórioco</a></li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link global-link active" data-bs-toggle="tab" href="#store">Loja</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link global-link dropdown-toggle" data-bs-toggle="dropdown" href="#sell" role="button" aria-expanded="false">Vendas <span class="bi bi-caret-down-square"></span></a>
+            <li class="nav-item dropdown dropdown-center">
+                <a class="nav-link rounded-0 dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="#profile">Perfil</a>
                 <ul class="dropdown-menu text-center">
-                    <li><a data-bs-toggle="modal" data-bs-target="#newSale" class="dropdown-item" href="#">Nova</a></li>
-                    <li><a class="dropdown-item" href="#">Disponíveis</a></li>
-                    <li><a class="dropdown-item" href="#">Todas as vendas</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link global-link dropdown-toggle" data-bs-toggle="dropdown" href="#profile" role="button" aria-expanded="false">Perfil <span class="bi bi-gear"></span></a>
-                <ul class="dropdown-menu text-center">
-                    <li><strong class="dropdown-item">Olá, <?= $this->getUser() ?></strong></li>
+                    <li><p class="fw-bold">Olá, <span>...</span></p></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Notificações</a></li>
-                    <li><a class="dropdown-item" href="#">Configurações</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myCart" href="#">Perfil</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#">Notificações</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" id="exit" href="<?= URL_RAIZ ?>">Sair</a></li>
+                    <li><a class="dropdown-item link-danger" id="exit" href="index.html">Sair</a></li>
                 </ul>
             </li>
         </ul>
     </div>
 </header>
+
 <div id="main">
-    <div id="pag-init">
-        <div class="tab-content">
-            <div class="tab-pane show position-relative" id="init">
-                <div class="">
-                    <img class="img-fluid" src="<?= URL_IMG . 'background.png' ?>" alt="">
-                </div>
-                <div class="text-center">
-                    <button aria-current="page" data-bs-toggle="tab" data-bs-target="#store" class="btn global-btn home-btn position-absolute translate-middle">Ofertas</button>
-                </div>
+    <div class="tab-content">
+
+        <div class="tab-pane" id="init">
+        <div class="position-relative">
+            <img class="img-fluid" src="<?= URL_IMG . 'background.png' ?>" alt="" srcset="">
+            <div class="d-flex flex-column align-items-center justify-content-center position-absolute start-50 translate-middle" style="top: 75%">
+            <a class="btn btn-lg p-lg-3 ps-lg-5 pe-lg-5 btn-primary rounded-1 text-xl-start fw-bolder" href="#">Ofertas</a>
             </div>
         </div>
-    </div>
-    <div id="pag-store">
-        <div class="tab-content">
-            <div class="tab-pane show active home-bg pt-5" id="store">
-                <section class="row ms-5 me-5">
-                <div class="col-3 home-col border border-warning bg-white">
-                      <h4 class="pt-3 ps-2 text-warning fw-bold"><i class="bi-sliders"></i> Filtrar por:</h4>
-                      <p class="ms-4 mt-5 fw-bold">Preço:</p>
-                      <div class="input-group">
-                        <input type="text" class="form-control form-control-sm ms-4 me-2" placeholder="Mínimo">
-                        <h4>_</h4>
-                        <input type="text" class="form-control form-control-sm me-4 ms-2" placeholder="Máximo">
-                      </div>
-                      <p class="ms-4 mt-5 fw-bold">Tipo:</p>
-                      <div class="input-group input-group-lg ms-4">
-                        <input class="form-check form-check-inline" type="checkbox" name="opt1" id="opt1">
-                        <label for="opt1">Broca</label>
-                      </div>
-                      <div class="input-group input-group-lg ms-4">
-                        <input class="form-check form-check-inline" type="checkbox" name="opt1" id="opt1">
-                        <label for="opt1">Chave de fenda</label>
-                      </div>
-                      <div class="input-group input-group-lg ms-4">
-                        <input class="form-check form-check-inline" type="checkbox" name="opt1" id="opt1">
-                        <label for="opt1">Martelo</label>
-                      </div>
-                      <div class="input-group input-group-lg ms-4">
-                        <input class="form-check form-check-inline" type="checkbox" name="opt1" id="opt1">
-                        <label for="opt1">Parafuso</label>
-                      </div>
-                    </div>
-                    <div class="col home-col border border-warning bg-white">
-                        <div class="input-group input-group-lg mt-1 mb-2 p-1 pe-3 ps-3 border-bottom">
-                        <input type="search" class="form-control" placeholder="Procurar...">
-                        <button class="btn"><i class="bi-search"></i></button>
+        </div>
+
+        <div class="tab-pane show active bg-secondary bg-opacity-25 pt-4" id="store">
+            <section class="row bg-white ms-5 me-5">
+                <div class="col-3 border border-primary border-opacity-50">
+                    <div class="m-2 mt-3">
+                        <h4 class="text-primary mb-4">Filtro:</h4>
+                        <p class="fw-bold mb-0">Preço:</p>
+                        <div class="mt-0 mb-5">
+                            <form class="input-group input-group-sm" action="<?= URL_RAIZ . 'store' ?>" method="post">
+                                <input class="form-control form-control-sm rounded-0 border-0 border-bottom border-1 border-primary shadow-none" type="number" name="minimum" id="minimum" max="100" min="1" placeholder="Mínimo">
+                                <p class="fw-bold ms-2 me-2">_</p>
+                                <input class="form-control form-control-sm rounded-0 shadow-none border-0 border-bottom border-1 border-primary" type="number" name="maximum" id="maximum" max="100" min="1" placeholder="Máximo">
+                            </form>
                         </div>
+                        <p class="fw-bold mb-0">Tipo:</p>
+                        <div id="optionsType" class="input-group input-group-sm">
+
+                        </div>
+
+
                     </div>
-                </section>
-            </div>
+                </div>
+                <div class="col-9 border border-primary border-opacity-50">
+                    <div class="m-1 pb-2 pt-2 border-bottom">
+                        <form class="input-group input-group-lg" action="<?= URL_RAIZ . 'store' ?>" method="post">
+                            <input class="form-control rounded-0 border-primary shadow-none" type="text" name="" id="" placeholder="Procurar...">
+                            <button class="btn btn-outline-primary rounded-0" type="submit"><i class="bi-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </div>
+
     </div>
 </div>

@@ -1,31 +1,35 @@
-<div class="container-fluid login-bg m-auto">
-    <div class="row justify-content-center">
-        <section class="col-12 col-sm-6 col-md-5 mt-5 mb-5">
-            <form class="login" action="<?= URL_RAIZ . 'login' ?>" method="post">
-                <h1 class="text-center">Entrar</h1>
+<header class="container-fluid p-2 bg-light border-bottom border-3 border-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container"> 
+        <a class="navbar-brand mx-auto" href="#">
+            <img class="img-fluid" src="<?= URL_IMG . 'logo.png' ?>" alt="">
+        </a>
+    </div>
+</nav>
+</header>
 
-                <div class="text-center mt-3 mb-5">
-                    <img class="img-fluid" src="<?= URL_IMG . 'logo.png' ?>" alt="">
-                </div>
-
-                <div class="form-floating my-3">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Email...">
-                    <label for="email">Email:</label>
-                </div>
-
-                <div class="form-floating my-3">
-                    <input class="form-control" type="password" name="password" id="password" placeholder="Senha...">
-                    <label for="password">Senha:</label>
-                </div>
-                
-                <div class="text-center">
-                    <button class="btn btn-lg pe-5 ps-5 global-btn">Entrar</button>
-                </div>
-
-                <div class="my-3">
-                    <p>Ainda não possuí cadastro? <a class="link-warning" href="<?= URL_RAIZ . 'register/create' ?>">Registrar-se</a></p>
-                </div>
-            </form>
-        </section>
+<div class="container mb-5">
+    <div class="row justify-content-center align-items-center text-center mb-5">
+    <div class="col-md-5">
+        <div class="m-5">
+        <h3 class="fw-bold text-primary">Acessar o Sistema</h3>
+        </div>
+        <form action="<?= URL_RAIZ . 'login' ?>" method="post" class="m-5">
+        <div class="form-floating">
+            <input type="email" id="email" name="email" class="form-control form-control-sm mb-4" placeholder="Email..." autofocus>
+            <label for="email">Email:</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" id="password" name="password" class="form-control form-control-sm mb-4" placeholder="Senha..." autofocus>
+            <label for="password">Senha:</label>
+        </div>
+        <div class="">
+            <button type="submit" class="btn btn-lg btn-primary w-100 mb-1 rounded-1">Entrar <i class="bi-box-arrow-in-right"></i></button>
+        </div>
+        </form>
+        <div class="mb-5">
+        <p>Ainda não tem acesso? <a class="text-primary fw-bold text-uppercase" href="<?= URL_RAIZ . 'register/create' ?>">Cadastre-se</a></p>
+        </div>
+    </div>
     </div>
 </div>

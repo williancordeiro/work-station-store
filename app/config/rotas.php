@@ -7,9 +7,6 @@ $rotas = [
     '/store' => [
         'GET' => '\Controller\StoreController#index',
     ],
-    '/store/sale/new' => [
-        'GET' => '\Controller\StoreController#new',
-    ],
     '/login' => [
         'GET' => '\Controller\LoginController#index',
         'POST' => '\Controller\LoginController#bin',
