@@ -6,7 +6,7 @@ class DW3ImagemUpload
     const NOME_TEMPORARIO = 'tmp_name';
     const TAMANHO = 'size';
     const KILOBYTE = 1024;
-    const TAMANHO_MAXIMO = 500 * self::KILOBYTE;
+    const TAMANHO_MAXIMO = 800 * self::KILOBYTE;
 
     // verifica se tudo é valido
     public static function isValida($arquivo)
@@ -38,6 +38,6 @@ class DW3ImagemUpload
     /* Verifica se existe a imagem já salva na pasta img */
     public static function existe($imagemNome)
     {
-        return file_exists(PASTA_PUBLICO . "img/$imagemNome");
+        return file_exists(PASTA_PUBLICO . "imgs/$imagemNome");
     }
 }

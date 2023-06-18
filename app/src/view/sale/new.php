@@ -1,38 +1,42 @@
-<div class="modal fade" id="newSale" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Vender Produto</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= URL_RAIZ . 'store' ?>" method="POST">
-                    <div class="row justify-content-center ms-3 me-lg-5">
-                        <div class="col-md-12">
-                            <h5 class="fw-bold mt-1">Cadastrar produto:</h5>
-                            <p class="fw-bold m-0">Imagem:</p>
-                            <label class="home-file ms-4" for="img"><i class="bi-image-fill"></i></label>
-                            <input class="visually-hidden m-0 p-0" type="file" name="file" id="img">
-                        </div>
-                        <div class="col-md-12">
-                            <label class="fw-bold" for="name">Nome:</label>
-                            <input class="form-control" type="text" name="name" id="name" autofocus>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="fw-bold" for="name">Preço:</label>
-                            <input class="form-control" type="number" name="name" id="name">
-                        </div>
-                        <div class="col-md-12">
-                            <label class="fw-bold" for="descript">Descrição:</label>
-                            <input class="form-control form-control-plaintext pb-5 ps-2" type="text" name="descript" id="descript">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="submit" class="btn btn-warning">Publicar</button>
-            </div>
+<div class="container mb-5">
+    <div class="row justify-content-center align-items-center mb-5">
+        <div class="col-md-5">
+        <div class="m-5">
+            <h3 class="fw-bold text-primary text-center">Cadastrar produto:</h3>
+        </div>
+            <form action="<?= URL_RAIZ . 'store/new' ?>" method="post" class="m-5" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <label for="" class="form-label me-2 fw-bold">Nome:</label>
+                    <input type="text" name="name" id="name" class="form-control" autofocus>
+                </div>
+                <div class="input-group mb-3">
+                    <label for="price" class="form-label me-2 fw-bold">Preço:</label>
+                    <span class="input-group-text">R$</span>
+                    <input type="text" name="price" id="price" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <label for="description" class="form-label me-2 fw-bold">Descrição:</label>
+                    <textarea type="text" name="description" id="description" class="form-control pb-lg-5" rows="2"></textarea>
+                </div>
+                <div class="input-group mb-3">
+                    <label for="category" class="form-label me-2 fw-bold">Categoria:</label>
+                    <select name="category" id="category" class="form-select">
+                        <?php foreach ($categorys as $category) : ?>
+                            <?php $selected = $this->getPost('category') == $category->getId() ? 'selected' : '------' ?>
+                            <option value="<?= $category->getId() ?>" <?= $selected ?> ><?= $category->getName() ?></option>
+                        <?php endforeach ?>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <label for="image" class="form-label me-2 fw-bold">Imagem:</label>
+                    <input class="form-control" type="file" name="image" id="image">
+                    <!--<label for="image" class="form-label text-lg-start"><i class="bi-image-fill h1"></i></label>
+                    <input type="file" name="image" id="img" class="visually-hidden">-->
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-primary ms-3">Publicar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

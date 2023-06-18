@@ -58,6 +58,18 @@ class User extends Model {
         DW3BancoDeDados::getPdo()->commit();
     }
 
+    public static function searchId($id) {
+        $command = DW3BancoDeDados::prepare(self::SEARCH_ID);
+        $command->bindValue(1, $id, PDO::PARAM_INT);
+        $command->execute();
+        $register = $command->fetch();
+        return new User(
+            $register['name'],
+            null,
+            $register['id']
+        );
+    }
+
     public static function searchName($name) {
         $command = DW3BancoDeDados::prepare(self::SEARCH_NAME);
         $command->bindValue(1, $name, PDO::PARAM_STR);

@@ -12,15 +12,20 @@ abstract class Controller extends DW3Controlador {
         $user = $this->getUser();
         
         if ($user == null)
-            $this->redirecionar(URL_RAIZ . 'register/create');
+            $this->redirecionar(URL_RAIZ . 'login');
 
     }
 
     protected function getUser() {
-        if ($this->user == null)
-            $user = DW3sessao::get('user');
+        if ($this->user == null) {
+            $userId = DW3Sessao::get('user');
+            if ($userId == null)
+                return null;
+            
+            $this->user = User::searchId($userId);
+        }
 
-        return $user;
+        return $this->user;
     }
 }
 ?>
