@@ -47,7 +47,7 @@ class User extends Model {
         $this->insert();
     }
 
-    public function insert() {
+    private function insert() {
         DW3BancoDeDados::getPdo()->beginTransaction();
         $command = DW3BancoDeDados::prepare(self::INSERT);
         $command->bindValue(1, $this->name, PDO::PARAM_STR);
@@ -103,6 +103,18 @@ class User extends Model {
             $object->password = $register['password'];
         }
         return $object;
+    }
+
+    protected function verifyErrors() {
+        
+        if (strlen($this->name) < 3)
+            $this->setErroMensagem('name', 'Deve ter no mínimo 3 caracteres.');
+
+        if (strlen($this->email) < 3)
+            $this->setErroMensagem('email', 'Deve ter no mínimo 3 caracteres.');
+
+        if (strlen($this->passwordCrypto) < 3)
+            $this->setErroMensagem('password', 'Deve ter no mínimo 3 caracteres.');
     }
 }
 ?>

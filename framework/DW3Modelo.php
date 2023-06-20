@@ -16,10 +16,10 @@ abstract class DW3Modelo
     }
 
     /* Chamado pelo controlador */
-	public function isValido()
+	public function isValid()
     {
     	$this->__erros = [];
-    	$this->verificarErros();
+    	$this->verifyErrors();
         return empty($this->__erros);
     }
 

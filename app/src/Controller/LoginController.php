@@ -17,6 +17,7 @@ class LoginController extends Controller {
             DW3Sessao::set('user', $user->getId());
             $this->redirecionar(URL_RAIZ . 'store');
         } else {
+            $this->setErros(['login' => 'Usuário ou senha inválido.']);
             $this->visao('login/login.php');
         }
     }

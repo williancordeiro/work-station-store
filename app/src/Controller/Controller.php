@@ -6,6 +6,8 @@ use \Framework\DW3Controlador;
 use \Framework\DW3Sessao;
 
 abstract class Controller extends DW3Controlador {
+    use ViewerController;
+
     protected $user;
 
     protected function verifyLogin() {

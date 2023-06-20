@@ -44,8 +44,9 @@ class Product extends Model {
     public function getImage() {
         $imageName = "{$this->id}.png";
 
-        if (!DW3ImagemUpload::existe($imageName))
+        if (!DW3ImagemUpload::existe($imageName)) {
             $imageName = 'default.png';
+        }
 
         return $imageName;
     }

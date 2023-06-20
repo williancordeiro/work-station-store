@@ -11,8 +11,14 @@ class RegisterController extends Controller {
 
     public function bin() {
         $user = new User($_POST['name'], $_POST['email'], $_POST['password']);
-        $user->save();
-        $this->redirecionar(URL_RAIZ . 'store');
+        
+        if ($user->isValid()) {
+            $user->save();
+            $this->redirecionar(URL_RAIZ . 'store');
+        } else {
+            $this->setErros($user->getValidacaoErros());
+            $this->visao('register/register.php');
+        }
     }
 
     public function sucess() {
