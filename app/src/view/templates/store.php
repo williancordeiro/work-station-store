@@ -27,7 +27,7 @@
                 <li class="nav-item dropdown dropdown-center">
                     <a class="nav-link rounded-0 dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="#purchase">Compras</a>
                     <ul class="dropdown-menu text-center">
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myCart" href="#"><i class="bi-basket2"></i> Carrinho</a></li>
+                        
                     <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#historicSales"><i class="bi-clock-history"></i> Histórioco</a></li>
                     </ul>
                 </li>
@@ -39,7 +39,7 @@
                     <ul class="dropdown-menu text-center">
                         <li><a class="dropdown-item" href="<?= URL_RAIZ . 'store/new' ?>"><i class="bi-plus-square"></i> Nova</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myAvailable" href="#"><i class="bi-check-square"></i> Disponíveis</a></li>
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#"><i class="bi-clock-history"></i> Histórioco</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#historicSales" href="#"><i class="bi-clock-history"></i> Histórioco</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown dropdown-center">

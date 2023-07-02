@@ -13,24 +13,30 @@ class Product extends Model {
 
     const SEARCH_CATEGORY = 'SELECT name FROM product_type WHERE id = ?';
 
-    const INSERT = 'INSERT INTO products(name, price, description, id_category, id_user) VALUES (?, ?, ?, ?, ?)';
+    const INSERT = 'INSERT INTO products(name, price, description, id_category, id_user, sale) VALUES (?, ?, ?, ?, ?, ?)';
 
     private $name;
     private $price;
     private $description;
     private $category;
     private $user;
+    private $sale;
     private $id;
     private $image;
 
-    public function __construct($name, $price, $description, $category, $user, $id = null, $image = null) {
+    public function __construct($name, $price, $description, $category, $user, $sale, $id = null, $image = null) {
         $this->setName($name);
         $this->setPrice($price);
         $this->setDescription($description);
         $this->setCategory($category);
         $this->setUser($user);
+        $this->setSale($sale);
         $this->id = $id;
         $this->image = $image;
+    }
+
+    public function getId() {
+        return $this->id;
     }
 
     private function setName($name) {
@@ -93,6 +99,14 @@ class Product extends Model {
         return $this->user;
     }
 
+    private function setSale($sale) {
+        $this->sale = $sale;
+    }
+
+    public function getSale() {
+        return $this->sale;
+    }
+
     public function save() {
         $this->insert();
         $this->saveImage();
@@ -107,6 +121,7 @@ class Product extends Model {
         $command->bindValue(3, $this->description, PDO::PARAM_STR);
         $command->bindValue(4, $this->category, PDO::PARAM_STR);
         $command->bindValue(5, $this->user, PDO::PARAM_STR);
+        $command->bindValue(6, $this->sale, PDO::PARAM_STR);
         $command->execute();
 
         $this->id = DW3BancoDeDados::getPdo()->lastInsertId();
@@ -128,7 +143,7 @@ class Product extends Model {
         $products = [];
 
         foreach ($registers as $register)
-            $products[] = new Product($register['name'], $register['price'], $register['description'], $register['id_category'], $register['id_user'], $register['id']);
+            $products[] = new Product($register['name'], $register['price'], $register['description'], $register['id_category'], $register['id_user'], $register['sale'], $register['id']);
 
         return $products;
     }

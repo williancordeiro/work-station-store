@@ -20,17 +20,19 @@
               </thead>
               <tbody>
                 <?php foreach ($available as $product) : ?>
-                  <tr>
-                    <td><img src="<?= URL_IMG . $product->getImage() ?>" alt="Imagem" style="max-width: 30px; height: auto;"></td>
-                    <td><?= $product->getName() ?></td>
-                    <td>R$ <?= number_format($product->getPrice(), 2, ',', '.') ?></td>
-                    <td><?= $product->getCategory() ?></td>
-                    <td class="overflow-auto" style="max-width: 13rem; max-height: 1rem;"><?= $product->getDescription() ?></td>
-                    <td>
-                      <button class="btn btn-outline-danger"><i class="bi-trash"></i></button>
-                      <button class="btn btn-outline-primary"><i class="bi-pencil"></i></button>
-                    </td>
-                  </tr>
+                  <?php if (!$product->getSale()) : ?>
+                    <tr>
+                      <td><img src="<?= URL_IMG . $product->getImage() ?>" alt="Imagem" style="max-width: 30px; height: auto;"></td>
+                      <td><?= $product->getName() ?></td>
+                      <td>R$ <?= number_format($product->getPrice(), 2, ',', '.') ?></td>
+                      <td><?= $product->getCategory() ?></td>
+                      <td class="overflow-auto" style="max-width: 13rem; max-height: 1rem;"><?= $product->getDescription() ?></td>
+                      <td>
+                        <button class="btn btn-outline-danger"><i class="bi-trash"></i></button>
+                        <button class="btn btn-outline-primary"><i class="bi-pencil"></i></button>
+                      </td>
+                    </tr>
+                  <?php endif ?>
                 <?php endforeach ?>
               </tbody>
             </table>

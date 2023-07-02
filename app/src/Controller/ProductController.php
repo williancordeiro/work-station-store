@@ -25,11 +25,13 @@ class ProductController extends Controller {
         $description = trim($_POST['description']);
         $category = $_POST['category'];
         $userId = DW3Sessao::get('user');
+        $saleProduct = 0;
 
 
-        $product = new Product($name, $price, $description, $category, $userId, $img);
+        $product = new Product($name, $price, $description, $category, $userId, $saleProduct, $img);
 
         $product->save();
+
 
         $this->redirecionar(URL_RAIZ . 'store');
     }

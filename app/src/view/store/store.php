@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-9 border border-primary border-opacity-50">
                     <div class="m-1 pb-2 pt-2 border-bottom">
-                        <form class="input-group input-group-lg" action="<?= URL_RAIZ . 'store' ?>" method="post">
+                        <form class="input-group input-group-lg" method="get">
                             <input class="form-control rounded-0 border-primary shadow-none" type="text" name="" id="" placeholder="Procurar...">
                             <button class="btn btn-outline-primary rounded-0" type="submit"><i class="bi-search"></i></button>
                         </form>
@@ -54,20 +54,23 @@
                     <div class="mt-1 row bm-lg-5">
                         <form class="mt-1 row bm-lg-5 m-0" action="<?= URL_RAIZ . 'store' ?>" method="post">
                             <?php foreach ($products as $product) : ?>
-                                <div class="col-4 mb-2">
-                                <div class="card" style="width: 18rem;">
-                                <img src="<?= URL_IMG . $product->getImage() ?>" class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h4 class="card-title fw-bold"><?= $product->getName() ?></h4>
-                                        <p class="fw-bold m-0">Preço: <p class="m-0 fw-bold text-primary"> R$ <?= number_format($product->getPrice(), 2, ',', '.') ?></p></p>
-                                        <p>Categoria: <?= $product->getCategory() ?></p>
-                                    <p class="card-text" style="max-height: 3em; overflow: auto;">
-                                        <?= $product->getDescription() ?>
-                                    </p>
-                                    <button type="submit" class="btn btn-primary w-100">Comprar</button>
-                                </div>
-                                </div>
-                            </div>
+                                <?php if (!$product->getSale()) : ?>
+                                    <div class="col-4 mb-2">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="<?= URL_IMG . $product->getImage() ?>" class="card-img-top" alt="">
+                                            <div class="card-body">
+                                                <h4 id="productName" class="card-title fw-bold"><?= $product->getName() ?></h4>
+                                                    <p class="fw-bold m-0">Preço: <p class="m-0 fw-bold text-primary"> R$ <?= number_format($product->getPrice(), 2, ',', '.') ?></p></p>
+                                                    <p>Categoria: <?= $product->getCategory() ?></p>
+                                                <p class="card-text" style="max-height: 3em; overflow: auto;">
+                                                    <?= $product->getDescription() ?>
+                                                </p>
+                                                <input type="hidden" name="productId" id="productId" value="<?= $product->getId() ?>">
+                                                <button type="submit" class="btn btn-primary w-100">Comprar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif ?>
                             <?php endforeach ?>
                         </form>        
                     </div>
@@ -80,6 +83,7 @@
 
 <?php include PASTA_VISAO . 'sale/new2.php' ?>
 
-<?php include PASTA_VISAO . 'sale/historic.php' ?>
+<?php include PASTA_VISAO . 'report/purchases.php' ?>
+<?php include PASTA_VISAO . 'report/sales.php' ?>
 
 <?php include PASTA_VISAO . 'sale/available.php' ?>
