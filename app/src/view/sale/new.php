@@ -1,6 +1,9 @@
 <div class="container mb-5">
     <div class="row justify-content-center align-items-center mb-5">
         <div class="col-md-5">
+            <div class="container justify-content-sart m-3">
+                <a class="btn btn-outline-primary" href="<?= URL_RAIZ . 'store' ?>" ><i class="bi-arrow-left"></i> Voltar</a>
+            </div>
         <div class="m-5">
             <h3 class="fw-bold text-primary text-center">Cadastrar produto:</h3>
         </div>

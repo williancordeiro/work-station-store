@@ -5,6 +5,7 @@ use \Model\Product;
 use \Model\Category;
 use \Model\Sale;
 use \Model\User;
+use \Model\Report;
 use \Framework\DW3Sessao;
 
 class StoreController extends Controller {
@@ -18,7 +19,7 @@ class StoreController extends Controller {
             'user' => $this->getUser(),
             'products' => Product::searchAll(),
             'available' => Product::searchUserId($userId),
-            'shopping' => Sale::searchSalesByUserId($userId),
+            'registers' => Report::searchRegisters($_GET),
             'categorys' => Category::searchAll()
         ], 'store.php');
     }

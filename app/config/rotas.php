@@ -12,6 +12,9 @@ $rotas = [
         'GET' => '\Controller\ProductController#index',
         'POST' => '\Controller\ProductController#bin',
     ],
+    '/store/report' => [
+        'GET' => '\Controller\ReportController#purchases',
+    ],
     '/login' => [
         'GET' => '\Controller\LoginController#index',
         'POST' => '\Controller\LoginController#bin',

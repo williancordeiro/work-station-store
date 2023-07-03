@@ -28,7 +28,7 @@
                     <a class="nav-link rounded-0 dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="#purchase">Compras</a>
                     <ul class="dropdown-menu text-center">
                         
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#" href="#historicSales"><i class="bi-clock-history"></i> Histórioco</a></li>
+                    <li><a class="dropdown-item" href="<?= URL_RAIZ . 'store/report' ?>"><i class="bi-clock-history"></i> Histórioco</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

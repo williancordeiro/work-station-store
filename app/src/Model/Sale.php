@@ -7,7 +7,9 @@ use \Framework\DW3ImagemUpload;
 
 class Sale extends Model {
     const SEARCH_ALL = 'SELECT * FROM sale ORDER BY id';
-    const SEARCH_BY_USERID = 'SELECT * FROM products p JOIN sale s WHERE s.id_user_seller = ?';
+    const SEARCH_BY_USERID = 'SELECT * FROM products p INNER JOIN sale s ON p.id = s.id_product WHERE s.id_user_seller = ?';
+
+    const SALE_BY_USER =  'SELECT * FROM products p JOIN sale s WHERE p.sale = 1 AND s.id_user_seller = ?';
 
     const INSERT = 'INSERT INTO sale(id_product, id_user_seller) VALUES (?, ?)';
 
@@ -91,4 +93,3 @@ class Sale extends Model {
         $command->execute();
     }
 }
-?>
