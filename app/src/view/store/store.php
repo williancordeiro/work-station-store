@@ -64,6 +64,7 @@
                     <div class="mt-1 row bm-lg-5">
                         <form class="mt-1 row bm-lg-5 m-0" action="<?= URL_RAIZ . 'store' ?>" method="post">
                             <?php foreach ($products as $product) : ?>
+                                <?php if (!$product->getSale()) : ?>
                                     <div class="col-4 mb-2">
                                         <div class="card" style="width: 18rem;">
                                             <img src="<?= URL_IMG . $product->getImage() ?>" class="card-img-top" alt="">
@@ -79,6 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                <?php endif ?>
                             <?php endforeach ?>
                         </form>        
                     </div>
