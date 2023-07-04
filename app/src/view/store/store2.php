@@ -18,52 +18,43 @@
                         <p class="fw-bold mb-0">Preço:</p>
                         <div class="mt-0 mb-5">
                             <form class="input-group input-group-sm" method="get">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <input class="form-control form-control-sm rounded-0 border-0 border-bottom border-1 border-primary shadow-none" type="text" name="priceMin" id="priceMin" placeholder="Mínimo">
-                                        <p class="fw-bold ms-2 me-2">_</p>
-                                        <input class="form-control form-control-sm rounded-0 shadow-none border-0 border-bottom border-1 border-primary" type="text" name="priceMax" id="priceMax" placeholder="Máximo">
-                                    </div>
-                                    <div class="col-12 pt-3">
-                                        <p class="fw-bold mb-0">Categoria:</p>
-                                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
-                                            <input type="checkbox" name="type1" id="category" class="form-check-inline">
-                                            <label for="type1">Elétricas</label>
-                                        </div>
-                                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
-                                            <input type="checkbox" name="type2" id="category" class="form-check-inline">
-                                            <label for="type2">Manuais</label>
-                                        </div>
-                                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
-                                            <input type="checkbox" name="type3" id="category" class="form-check-inline">
-                                            <label for="type3">Medição</label>
-                                        </div>
-                                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
-                                            <input type="checkbox" name="type4" id="category" class="form-check-inline">
-                                            <label for="type4">Acessórios</label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="text-end">
-                                            <button type="submit" class="btn btn-outline-primary">Filtrar</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <input class="form-control form-control-sm rounded-0 border-0 border-bottom border-1 border-primary shadow-none" type="number" name="minimum" id="minimum" max="100" min="1" placeholder="Mínimo">
+                                <p class="fw-bold ms-2 me-2">_</p>
+                                <input class="form-control form-control-sm rounded-0 shadow-none border-0 border-bottom border-1 border-primary" type="number" name="maximum" id="maximum" max="100" min="1" placeholder="Máximo">
                             </form>
                         </div>
+                        <p class="fw-bold mb-0">Categoria:</p>
+                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
+                            <input type="checkbox" name="type1" id="type1" class="form-check-inline">
+                            <label for="type1">Elétricas</label>
+                        </div>
+                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
+                            <input type="checkbox" name="type2" id="type2" class="form-check-inline">
+                            <label for="type2">Manuais</label>
+                        </div>
+                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
+                            <input type="checkbox" name="type3" id="type3" class="form-check-inline">
+                            <label for="type3">Medição</label>
+                        </div>
+                        <div id="optionsType" class="input-group input-group-sm mt-1 ms-2">
+                            <input type="checkbox" name="type4" id="type4" class="form-check-inline">
+                            <label for="type4">Acessórios</label>
+                        </div>
+
 
                     </div>
                 </div>
                 <div class="col-9 border border-primary border-opacity-50">
                     <div class="m-1 pb-2 pt-2 border-bottom">
                         <form class="input-group input-group-lg" method="get">
-                            <input class="form-control rounded-0 border-primary shadow-none" type="text" name="" id="productDescription" placeholder="Procurar...">
+                            <input class="form-control rounded-0 border-primary shadow-none" type="text" name="" id="" placeholder="Procurar...">
                             <button type="submit" class="btn btn-outline-primary rounded-0" type="submit"><i class="bi-search"></i></button>
                         </form>
                     </div>
                     <div class="mt-1 row bm-lg-5">
                         <form class="mt-1 row bm-lg-5 m-0" action="<?= URL_RAIZ . 'store' ?>" method="post">
                             <?php foreach ($products as $product) : ?>
+                                <?php if (!$product->getSale()) : ?>
                                     <div class="col-4 mb-2">
                                         <div class="card" style="width: 18rem;">
                                             <img src="<?= URL_IMG . $product->getImage() ?>" class="card-img-top" alt="">
@@ -79,6 +70,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                <?php endif ?>
                             <?php endforeach ?>
                         </form>        
                     </div>

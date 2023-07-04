@@ -20,5 +20,16 @@ class ReportController extends Controller {
         ]);
     }
 
+    public function sales() {
+        $userId = DW3Sessao::get('user');
+
+        $this->verifyLogin();
+        $this->visao('report/sales.php', [
+            'user' => $this->getUser(),
+            'products' => Product::searchUserId($userId),
+            'categorys' => Category::searchAll()
+        ]);
+    }
+
 }
 ?>

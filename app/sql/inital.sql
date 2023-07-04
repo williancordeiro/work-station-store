@@ -12,11 +12,12 @@ USE `work_station_store`;
 
 CREATE TABLE `products` (
   `id` int NOT NULL,
-  `name` varchar(30) NOT NULL,
+  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `price` double NOT NULL,
   `description` varchar(255) NOT NULL,
   `id_category` int NOT NULL,
-  `id_user` int NOT NULL
+  `id_user` int NOT NULL,
+  `sale` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -30,16 +31,17 @@ CREATE TABLE `product_type` (
   `name` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- --------------------------------------------------------
+
 --
--- Extraindo dados da tabela `product_type`
+-- Estrutura da tabela `sale`
 --
 
-INSERT INTO `product_type` (`id`, `name`) VALUES
-(1, '---'),
-(2, 'Acessórios'),
-(3, 'Elétricas'),
-(4, 'Manuais'),
-(5, 'Medição');
+CREATE TABLE `sale` (
+  `id` int NOT NULL,
+  `id_product` int NOT NULL,
+  `id_user_seller` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -53,13 +55,6 @@ CREATE TABLE `users` (
   `email` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Fulano', 'fulano@email.com', '$2y$10$DjMXMmMknJDx3Q7iDntXA.GDn4XT3mQOkM7Dcz/w7L1u8NIaZZ2Pe');
 
 --
 -- Índices para tabelas despejadas
@@ -78,6 +73,14 @@ ALTER TABLE `products`
 --
 ALTER TABLE `product_type`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `sale`
+--
+ALTER TABLE `sale`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_product` (`id_product`),
+  ADD KEY `id_user_seller` (`id_user_seller`);
 
 --
 -- Índices para tabela `users`
@@ -100,13 +103,19 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de tabela `product_type`
 --
 ALTER TABLE `product_type`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `sale`
+--
+ALTER TABLE `sale`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas
@@ -118,4 +127,11 @@ ALTER TABLE `users`
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `product_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Limitadores para a tabela `sale`
+--
+ALTER TABLE `sale`
+  ADD CONSTRAINT `sale_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `sale_ibfk_2` FOREIGN KEY (`id_user_seller`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;

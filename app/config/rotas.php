@@ -14,6 +14,7 @@ $rotas = [
     ],
     '/store/report' => [
         'GET' => '\Controller\ReportController#purchases',
+        'GET' => '\Controller\ReportController#sales',
     ],
     '/login' => [
         'GET' => '\Controller\LoginController#index',

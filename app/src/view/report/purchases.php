@@ -11,25 +11,25 @@
       <form method="get" class="mt-2 mb-4">
         <div class="input-group input-group-sm container mb-3">
           <label for="name" class="form-label fw-bold px-2">Nome:</label>
-          <input type="text" name="name" id="name" class="form-control form-control-sm me-lg-5" placeholder="Procurar por Nome">
+          <input type="text" name="name" id="productDescription" class="form-control form-control-sm me-lg-5" placeholder="Procurar por Nome">
         </div>
         <div class="input-group input-group-sm container mb-3">
           <label for="category" class="form-label fw-bold px-2">Categoria:</label>
           <select name="category" id="category" class="form-select me-lg-5">
             <?php foreach ($categorys as $category) : ?>
               <?php $selected = $this->getPost('category') == $category->getId() ? 'selected' : '------' ?>
-              <option value="<?= $category->getId() ?>" <?= $selected ?>><?= $category->getName() ?></option>
+              <option id="category" value="<?= $category->getId() ?>" <?= $selected ?>><?= $category->getName() ?></option>
             <?php endforeach ?>
           </select>
         </div>
         <div class="input-group input-group-sm container mb-3 row">
           <div class="col input-group input-group-sm p-0">
-            <label for="minPrice" class="fw-bold px-2">Preço Minimo:</label>
-            <input type="text" name="minPrice" id="minPrice" class="form-control form-control-sm">
+            <label for="priceMin" class="fw-bold px-2">Preço Minimo:</label>
+            <input type="text" name="priceMin" id="priceMin" class="form-control form-control-sm">
           </div>
           <div class="col input-group input-group-sm p-0">
-            <label for="maxPrice" class="fw-bold px-2">Preço Maximo:</label>
-            <input type="text" name="maxPrice" id="maxPrice" class="form-control form-control-sm">
+            <label for="maxpriceMaxPrice" class="fw-bold px-2">Preço Maximo:</label>
+            <input type="text" name="priceMax" id="priceMax" class="form-control form-control-sm">
           </div>
         </div>
         <div class="text-end container mb-3">
